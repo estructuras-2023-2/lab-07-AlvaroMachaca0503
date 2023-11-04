@@ -4,19 +4,11 @@
 
 using namespace std;
 
-vector<int> reorderVector(vector<int> data, int loser, int size) {
-    for (int i = 0; i < size - 1; i++) {
-        if (data[i] == loser) {
-            swap(data[i], data[size - 1]);
-        }
-    }
-    return data;
-}
-
 vector<int> Torneo(vector<int> skills, int roundsToWin, int totalRounds) {
     int size = skills.size();
-    int winner = 0;
     int loser = 0;
+    int winner = 0;
+
 
     queue<int> playerQueue;
 
@@ -54,4 +46,12 @@ vector<int> Torneo(vector<int> skills, int roundsToWin, int totalRounds) {
     }
 
     return result;
+}
+vector<int> reorderVector(vector<int> data, int loser, int size) {
+    for (int i = 0; i < size - 1; i++) {
+        if (data[i] == loser) {
+            swap(data[i], data[size - 1]);
+        }
+    }
+    return data;
 }
